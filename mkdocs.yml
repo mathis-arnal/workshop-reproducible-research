@@ -89,13 +89,18 @@ nav:
         - Setup: pages/course-information/pre-course-setup.md
     - Tutorials:
         - 'Project Organization': pages/project_organisation/project_organisation.md
-        - Sequencing data analyses: 
+        - Sequencing data analyses:
+          - Introduction: pages/sequence_analysis/introduction.md 
           - File formats: pages/sequence_analysis/file_formats.md
           - Short Reads Quality Control and Trimming: pages/sequence_analysis/qc_sr.md
           - Short reads assembly: pages/sequence_analysis/assembly_sr.md
           - Long reads: pages/sequence_analysis/long_reads.md
           - Hybrid assembly: pages/sequence_analysis/assembly_hybrid.md
           - Mapping and variant calling: pages/sequence_analysis/variant_calling.md
+        - Metagenomic :
+          - Introduction: pages/metagenomic/meta_introduction.md
+          - Background: pages/metagenomic/01-background-metadata.md
+          - Read Quality:   pages/metagenomic/02-assessing-read-quality.md
         # - Introduction: pages/introduction/introduction.md
         # - Data Management: pages/data-management/data-management.md
         # - Git:
