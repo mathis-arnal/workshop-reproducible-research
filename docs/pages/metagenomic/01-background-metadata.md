@@ -1,20 +1,17 @@
----
-title: "Starting a Metagenomics Project"
-teaching: 15 
-exercises: 15
-questions:
-- "How do you plan a metagenomics experiment?"
-- "How does a metagenomics project look like?"   
-objectives:
-- "Learn the differences between shotgun and metabarcoding (amplicon metagenomics) techniques."
-- "Understand the importance of metadata."  
-- "Familiarize yourself with the Cuatro Ciénegas experiment."
-keypoints:    
-- "Shotgun metagenomics can be used for taxonomic and functional studies." 
-- "Metabarcoding can be used for taxonomic studies."
-- "Collecting metadata beforehand is fundamental for downstream analysis."  
-- "We will use data from a Cuatro Ciénegas project to learn about shotgun metagenomics."
----
+# Starting a Metagenomics Project
+
+!!! info "Lesson overview"
+    **Teaching:** 15 min  
+    **Exercises:** 15 min  
+
+    **Questions**
+    - How do you plan a metagenomics experiment?
+    - How does a metagenomics project look like?
+
+    **Objectives**
+    - Learn the differences between shotgun and metabarcoding (amplicon metagenomics) techniques.
+    - Understand the importance of metadata.
+    - Familiarize yourself with the Cuatro Ciénegas experiment.
 
 ## Metagenomics 
 Metagenomes are collections of genomic 
@@ -80,8 +77,8 @@ directly tell us a lot about the metabolic functions found in each genome,
 although educated guesses can be made by knowing which genes are 
 commonly found in every identified species. 
 
-<a href="{{ page.root }}/fig/03-01-01.png">
-  <img src="{{ page.root }}/fig/03-01-01.png" alt="Flow chart that shows the steps of a metagenomics project: Experimental design, Sampling, DNA extraction, Sequencing, Read quality, Assembly, Binning, Bin quality and Data analysis " />
+<a href="{../fig/03-01-01.png">
+  <img src="{../fig/03-01-01.png" alt="Flow chart that shows the steps of a metagenomics project: Experimental design, Sampling, DNA extraction, Sequencing, Read quality, Assembly, Binning, Bin quality and Data analysis " />
 </a>
 
 ## On Metadata
@@ -93,24 +90,22 @@ the differences that we observe when comparing metagenomes can be
 correlated to the metadata, which is why we must devote a whole section 
 of our experimental design to the metadata we expect to collect and record carefully. 
 
-> ## Discussion #1: Choosing amplicon or shotgun sequencing? 
->
-> Suppose you want to find the source of a nasty gut infection in people. Which type of sequencing methodology would you choose?  
-> Which type of metadata would be helpful to record?
-> 
->> ## Solution
->> For a first exploration, 16S is a better idea since you could detect known pathogens by knowing the taxons in the community.
->> Nevertheless, if the disease is the consequence of a viral infection, the pathogen can only be discovered with shotgun metagenomics (that was the case of SARS-CoV 2). 
->> Also, metabarcoding does not provide insights into the genetic basis of the pathogenic phenotypes.
->> Metadata will depend on the type of experiment. For this case, some helpful metadata could be sampling methodology, 
->> date, place (country, state, region, city, etc.), patient's sex and age, the anatomical origin of the sample, symptoms, medical history, diet, lifestyle, and environment. 
->> 
-> {: .solution}  
-{: .discussion}
+!!! note "Discussion #1: Choosing amplicon or shotgun sequencing?" 
+
+      Suppose you want to find the source of a nasty gut infection in people. Which type of sequencing methodology would you choose?  
+      Which type of metadata would be helpful to record?
+ 
+      ??? success "Click to show the answer"
+            For a first exploration, 16S is a better idea since you could detect known pathogens by knowing the taxons in the community.
+            Nevertheless, if the disease is the consequence of a viral infection, the pathogen can only be discovered with shotgun metagenomics (that was the case of SARS-CoV 2). 
+            Also, metabarcoding does not provide insights into the genetic basis of the pathogenic phenotypes.
+            Metadata will depend on the type of experiment. For this case, some helpful metadata could be sampling methodology, 
+            date, place (country, state, region, city, etc.), patient's sex and age, the anatomical origin of the sample, symptoms, medical history, diet, lifestyle, and environment. 
+ 
 
 ## Cuatro Ciénegas  
-<a href="{{ page.root }}/fig/03-01-02.jpeg">
-  <img src="{{ page.root }}/fig/03-01-02.jpeg" alt="Photography of a pond in Cuatro Ciénegas" />
+<a href="../fig/03-01-02.jpeg">
+  <img src="../fig/03-01-02.jpeg" alt="Photography of a pond in Cuatro Ciénegas" />
 </a>
 
 During this lesson, we will work with actual metagenomic information, 
@@ -135,49 +130,50 @@ communities showed that many genomic traits, such as mean bacterial genome size,
 total number of tRNA genes, total number of rRNA genes, and codon usage bias were significantly 
 changed when the bacterial community underwent the treatment. 
 
-> ## Exercise 1: Reviewing metadata 
-> 
-> According to the results described for this CCB study.
-> 1. What kind of sequencing method do you think they used, and why do you think so?  
->  A) Metabarcoding   
->  B) Shotgun metagenomics   
->  C) Genomics of axenic cultures  
->
->  2. In the table [samples treatment information](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv), what was the most critical piece of metadata that the authors took?  
-> 
->> ## Solution
->> A) Metabarcoding. False. With this technique, usually, only one region of the genome is amplified.   
->> B) Shotgun Metagenomics. True. Only shotgun metagenomics could have been used to investigate the total number of tRNA genes.    
->> C) Genomics of axenic cultures. False. Information on the microbial community cannot be fully obtained with axenic cultures.    
->>  
->> The most crucial thing to know about our data is which community was and was not supplemented with fertilizers.  
->> However, any differences in the technical parts of the study, such as the DNA extraction protocol,
->> could have affected the results, so tracking those is also essential.
->> 
-> {: .solution}
-{: .challenge}
+!!! question "Exercise 1: Reviewing metadata"
+    According to the results described for this CCB study:
 
-> ## Exercise 2: Differentiate between IDs and sample names 
-> 
-> Depending on the database, several IDs can be used for the same sample.
-> Please open the document where the [metadata information is stored](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv). Here, inspect the IDs and find out which of them correspond to sample	**JP4110514WATERRESIZE**
->> ## Solution
->> ERS1949771	is the SRA ID corresponding to JP4110514WATERRESIZE
->> 
-> {: .solution}
-{: .challenge}
+    1. What kind of sequencing method do you think they used, and why do you think so?  
+       A) Metabarcoding  
+       B) Shotgun metagenomics  
+       C) Genomics of axenic cultures  
 
-> ## Exercise 3: Discuss the importance of metadata 
-> 
-> Which other information could you recommend to add in the metadata?
-> 
->> ## Solution
->> Metadata will depend on the type of the experiment, but some examples are the properties of the water before 
->> and after fertilization, sampling, and processing methodology, 
->> date and time, place (country, state, region, city, etc.). 
->> 
-> {: .solution}
-{: .challenge}
+    2. In the table [Samples treatment information](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv),  
+       what was the most critical piece of metadata that the authors took?
+
+    ??? success "Click to show the solution"
+        **1. Sequencing method**
+
+        A) Metabarcoding — ❌ False. With this technique, usually only one region of the genome is amplified.  
+        B) Shotgun Metagenomics — ✅ True. Only shotgun metagenomics could have been used to investigate the total number of tRNA genes.  
+        C) Genomics of axenic cultures — ❌ False. Information on the microbial community cannot be fully obtained with axenic cultures.    
+
+        **2. Sequencing Metadata**
+            The most crucial thing to know about our data is which community was and was not supplemented with fertilizers.  
+            However, any differences in the technical parts of the study, such as the DNA extraction protocol,
+            could have affected the results, so tracking those is also essential.
+ 
+
+!!! question "Exercise 3: Differentiate between IDs and sample names"
+    Depending on the database, several IDs can be used for the same sample.  
+    Please open the document where the [metadata information is stored](https://github.com/carpentries-incubator/metagenomics/blob/gh-pages/files/Samples_treatment_information.tsv).  
+    Here, inspect the IDs and find out which of them correspond to sample **JP4110514WATERRESIZE**.
+
+    ??? success "Click to show the solution"
+        ERS1949771 is the SRA ID corresponding to JP4110514WATERRESIZE
+
+
+!!! question "Exercise 4: Discuss the importance of metadata"
+    Which other information could you recommend to add in the metadata?
+
+    ??? success "Click to show the solution"
+        Metadata will depend on the type of the experiment, but some examples are:  
+        - Properties of the water before and after fertilization  
+        - Sampling and processing methodology  
+        - Date, time, and location (country, region, city, etc.)
+
+ 
+
 
 Throughout the lesson, we will use the first four 
 characters of the `File names (alias)` to identify the data files 
@@ -192,8 +188,8 @@ corresponding to a sample. We are going to use the first two sapmples for most o
 The results of this study, raw sequences, and metadata have 
 been submitted to the NCBI Sequence Read Archive (SRA) and stored in the BioProject [PRJEB22811](https://www.ncbi.nlm.nih.gov/sra/?term=PRJEB22811). 
 
-> ## Other metagenomic databases
-> The NCBI SRA is not the only repository for metagenomic information. There are other public metagenomic databases such as [MG-RAST](https://www.mg-rast.org/index.html?stay=1), [MGnify](https://www.ebi.ac.uk/metagenomics/), [Marine Metagenomics Portal](https://mmp.sfb.uit.no/), [Terrestrial Metagenome DB](https://webapp.ufz.de/tmdb/) and the [GM Repo](https://gmrepo.humangut.info/home).   
+ ## Other metagenomic databases
+ The NCBI SRA is not the only repository for metagenomic information. There are other public metagenomic databases such as [MG-RAST](https://www.mg-rast.org/index.html?stay=1), [MGnify](https://www.ebi.ac.uk/metagenomics/), [Marine Metagenomics Portal](https://mmp.sfb.uit.no/), [Terrestrial Metagenome DB](https://webapp.ufz.de/tmdb/) and the [GM Repo](https://gmrepo.humangut.info/home).   
 {: .callout}
 
 Each database requires certain metadata linked with the data. As an example, when `JP4D.fasta` is uploaded to 
@@ -212,3 +208,10 @@ mg-RAST the associated metadata looks like this:
 | longitude        | -102.14|    
 | env_package  |	water|    
 | depth	| 0.165 |   
+
+
+!!! Success "Key Points"
+    - Shotgun metagenomics can be used for taxonomic and functional studies.
+    - Metabarcoding can be used for taxonomic studies.
+    - Collecting metadata beforehand is fundamental for downstream analysis.
+    - We will use data from a Cuatro Ciénegas project to learn about shotgun metagenomics.

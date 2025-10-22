@@ -113,11 +113,11 @@ nav:
         #   - Working remotly: pages/git/git-7-working-remotely.md
         #   - Conflict: pages/git/git-8-conflicts.md
         #   - Extra material: pages/git/git-9-extra-material.md
-        # - Conda:
-        #   - Introduction: pages/conda/conda-1-introduction.md
-        #   - The basics: pages/conda/conda-2-the-basics.md
-        #   - Projects: pages/conda/conda-3-projects.md
-        #   - Extra material: pages/conda/conda-4-extra-material.md
+        - Conda:
+          - Introduction: pages/conda/conda-1-introduction.md
+          - The basics: pages/conda/conda-2-the-basics.md
+          - Projects: pages/conda/conda-3-projects.md
+          - Extra material: pages/conda/conda-4-extra-material.md
         # - Snakemake:
         #   - Introduction: pages/snakemake/snakemake-1-introduction.md
         #   - The basics: pages/snakemake/snakemake-2-the-basics.md
@@ -130,13 +130,13 @@ nav:
         #   - Shadow rules: pages/snakemake/snakemake-9-shadow-rules.md
         #   - Generalizing workflows: pages/snakemake/snakemake-10-generalizing-workflows.md
         #   - Extra materiel: pages/snakemake/snakemake-11-extra-material.md
-        # - Nextflow:
+        - Nextflow:
         #   - Introduction: pages/nextflow/nextflow-1-introduction.md
         #   - The basics: pages/nextflow/nextflow-2-the-basics.md
         #   - Running Nextflow: pages/nextflow/nextflow-3-executing-workflows.md
         #   - Processes: pages/nextflow/nextflow-4-working-with-processes.md
         #   - Configuration: pages/nextflow/nextflow-5-workflow-configuration.md
-        #   - The MRSA Workflow: pages/nextflow/nextflow-6-optimising-the-mrsa-workflow.md
+            - The MRSA Workflow: pages/nextflow/nextflow-6-optimising-the-mrsa-workflow.md
         #   - Extra materiel: pages/nextflow/nextflow-7-extra-material.md
         # - R Markdown:
         #   - Introduction: pages/rmarkdown/r-markdown-1-introduction.md

@@ -25,8 +25,8 @@ An example of the workflow we will be using for our analysis is provided below, 
 description of each step. 
 
 
- <a href="{{ page.root }}/fig/03-02-01.png">
-  <img src="{{ page.root }}/fig/03-02-01.png" alt="Flow diagram that shows the steps: Sequence reads, Quality control, Assembly, Binning and Taxonomy" />
+ <a href="../fig/03-02-01.png">
+  <img src="../fig/03-02-01.png" alt="Flow diagram that shows the steps: Sequence reads, Quality control, Assembly, Binning and Taxonomy" />
 </a>
 
 
@@ -46,8 +46,8 @@ built, assuming that the data will be provided in a specific format.
 We will now assess the quality of the sequence reads contained in our FASTQ files. 
 
 
- <a href="{{ page.root }}/fig/03-02-02.png">
-  <img src="{{ page.root }}/fig/03-02-02.png" alt="Flow diagram that shows the steps: Sequence reads and Quality control." />
+ <a href="../fig/03-02-02.png">
+  <img src="../fig/03-02-02.png" alt="Flow diagram that shows the steps: Sequence reads and Quality control." />
 </a>
 
 
@@ -243,8 +243,8 @@ data may have, so you can consider these issues before moving forward with your
 analyses. Rather than looking at quality scores for each read, FastQC looks at
 quality collectively across all reads within a sample. The image below shows one FastQC-generated plot that indicates a very high-quality sample:
 
- <a href="{{ page.root }}/fig/03-02-03.png">
-  <img src="{{ page.root }}/fig/03-02-03.png" alt="Quality graph showing a boxplot for each sequence position in the x-axis, and the Phred score in the y-axis. The background is colored red for the Phred scores 0 to 20, yellow for the scores 20 to 28, and green for the scores 28 to 38. All of the boxes for each position are in the green area." />
+ <a href="../fig/03-02-03.png">
+  <img src="../fig/03-02-03.png" alt="Quality graph showing a boxplot for each sequence position in the x-axis, and the Phred score in the y-axis. The background is colored red for the Phred scores 0 to 20, yellow for the scores 20 to 28, and green for the scores 28 to 38. All of the boxes for each position are in the green area." />
 </a>
 
 The x-axis displays the base position in the read, and the y-axis shows quality scores. In this 
@@ -261,8 +261,8 @@ acceptable (yellow) and bad (red) quality scores.
 
 Now let's look at a quality plot on the other end of the spectrum. 
 
- <a href="{{ page.root }}/fig/03-02-04.png">
-  <img src="{{ page.root }}/fig/03-02-04.png" alt="Graphic of boxplots, where the first ones are in the good range of scores of the y-axis and extend to the acceptable and bad ranges of scores toward the right of the x-axis" />
+ <a href="../fig/03-02-04.png">
+  <img src="../fig/03-02-04.png" alt="Graphic of boxplots, where the first ones are in the good range of scores of the y-axis and extend to the acceptable and bad ranges of scores toward the right of the x-axis" />
 </a>
 
 The FastQC tool produces several other diagnostic plots to assess sample quality and the one plotted above. Here, we see positions within the read in which the boxes span a much more comprehensive range. Also, quality scores drop pretty low into the "bad" range, particularly on the tail end of the reads. 
@@ -404,40 +404,37 @@ we can either: select the html files and with the secondary click chose the opti
 open in a browser or export the files to our local computer as we learned in the 
 Introduction to the Command Line lesson. 
 
-> ## Exercise 3: Downloading files by scp (optional)  
-> 
-> Suppose you only have access to a terminal and there is not a web browser available at the AWS remote machine.
-> The following are the steps needed to download your files to your computer. Observe the third step and answer false/true for each question about
-> the `scp` command.  
-> 1. Open a new terminal on your local computer.
-> 2. Make a new local directory on our computer to store the HTML files   `$ mkdir -p ~/Desktop/fastqc_html`  
-> 3. Transfer our HTML files to our local computer using `scp`.
-> `$ scp dcuser@ec2-34-238-162-94.compute-1.amazonaws.com:~/dc_workshop/results/fastqc_untrimmed_reads/*.html ~/Desktop/fastqc_html`  
-> A) `dcuser` is your local user  
-> B) `ec2-34-238-162-94.compute-1.amazonaws.com` is the address of your remote machine  
-> C) the current adress of the file goes after the second space in the `scp` command.  
-> D) `~/dc_workshop/results/fastqc_untrimmed_reads/*.html` is the path of the file you want to download  
-> E) `~/Desktop/fastqc_html` is a remote path.  
-> F) `:` Divides the host name of your local computer and the path of the file.   
-> 
->> ## Solution
->>  A) False. `dcuser` is your remote user.  
->>  B) True. `ec2-34-238-162-94.compute-1.amazonaws.com` is the adress of your remote machine  
->>  C) False. The current adress of the file goes after the first space in the `scp` command.  
->>  D) True. `~/dc_workshop/results/fastqc_untrimmed_reads/*.html` is the path of the file you want to download in the remote machine. 
->>  E) False. `~/Desktop/fastqc_html` is a local path where your file will be downloaded.
->>  F) False. `:` Divides the host name of a _remote_ computer and the path of the file on the remote computer.   
->>  
->>  You should see a status output like this:
->>  ~~~
->>  JC1A_R1_fastqc.html     100%  253KB 320.0KB/s   00:00     
->>  JC1A_R2_fastqc.html     100%  262KB 390.1KB/s   00:00     
->>  JP4D_R1_fastqc.html     100%  237KB 360.8KB/s   00:00     
->>  JP4D_R2_fastqc.html     100%  244KB 385.2KB/s   00:00
->>  ~~~
->>  {: .output}
-> {: .solution}
-{: .challenge}
+ ## Exercise 3: Downloading files by scp (optional)  
+ 
+ Suppose you only have access to a terminal and there is not a web browser available at the AWS remote machine.
+ The following are the steps needed to download your files to your computer. Observe the third step and answer false/true for each question about
+ the `scp` command.  
+ 1. Open a new terminal on your local computer.
+ 2. Make a new local directory on our computer to store the HTML files   `$ mkdir -p ~/Desktop/fastqc_html`  
+ 3. Transfer our HTML files to our local computer using `scp`.
+ `$ scp dcuser@ec2-34-238-162-94.compute-1.amazonaws.com:~/dc_workshop/results/fastqc_untrimmed_reads/*.html ~/Desktop/fastqc_html`  
+ A) `dcuser` is your local user  
+ B) `ec2-34-238-162-94.compute-1.amazonaws.com` is the address of your remote machine  
+ C) the current adress of the file goes after the second space in the `scp` command.  
+ D) `~/dc_workshop/results/fastqc_untrimmed_reads/*.html` is the path of the file you want to download  
+ E) `~/Desktop/fastqc_html` is a remote path.  
+ F) `:` Divides the host name of your local computer and the path of the file.   
+ 
+ ## Solution
+  A) False. `dcuser` is your remote user.  
+  B) True. `ec2-34-238-162-94.compute-1.amazonaws.com` is the adress of your remote machine  
+  C) False. The current adress of the file goes after the first space in the `scp` command.  
+  D) True. `~/dc_workshop/results/fastqc_untrimmed_reads/*.html` is the path of the file you want to download in the remote machine. 
+  E) False. `~/Desktop/fastqc_html` is a local path where your file will be downloaded.
+  F) False. `:` Divides the host name of a _remote_ computer and the path of the file on the remote computer.   
+  
+  You should see a status output like this:
+  ~~~
+  JC1A_R1_fastqc.html     100%  253KB 320.0KB/s   00:00     
+  JC1A_R2_fastqc.html     100%  262KB 390.1KB/s   00:00     
+  JP4D_R1_fastqc.html     100%  237KB 360.8KB/s   00:00     
+  JP4D_R2_fastqc.html     100%  244KB 385.2KB/s   00:00
+  ~~~
 
 
 Now we can open the 4 HTML files. 
@@ -446,16 +443,16 @@ Depending on your system,
 you should be able to select and open them all at once via a right-click menu
 in your file browser.
 
-> ## Exercise 4: Discuss the quality of sequencing files
-> 
-> Discuss your results with a neighbor. Which sample(s) looks the best
-> per base sequence quality? Which sample(s) look the
-> worst?
-> 
->> ## Solution
->> All of the reads contain usable data, but the quality decreases toward
->> the end of the reads. File JC1A_R2_fastqc shows the lowest quality.
-> {: .solution}
+ ## Exercise 4: Discuss the quality of sequencing files
+ 
+ Discuss your results with a neighbor. Which sample(s) looks the best
+ per base sequence quality? Which sample(s) look the
+ worst?
+ 
+ ## Solution
+ All of the reads contain usable data, but the quality decreases toward
+ the end of the reads. File JC1A_R2_fastqc shows the lowest quality.
+ {: .solution}
 {: .challenge}
 
 ## Decoding the other FastQC outputs
@@ -525,9 +522,9 @@ discuss what we're doing with each line of our loop.
 
 ~~~
 $ for filename in *.zip
-> do
-> unzip $filename
-> done
+  do
+  unzip $filename
+  done
 ~~~
 {: .bash}
 
@@ -660,39 +657,39 @@ $ cat */summary.txt > ~/dc_workshop/docs/fastqc_summaries.txt
 ~~~
 {: .bash}
 
-> ## Exercise 4: Quality tests
-> 
-> Which samples failed at least one of FastQC's quality tests? What
-> test(s) did those samples failed
->
->> ## Solution
->> 
->> We can get the list of all failed tests using `grep`. 
->> 
->> ~~~ 
->> $ cd ~/dc_workshop/docs
->> $ grep FAIL fastqc_summaries.txt
->> ~~~
->> {: .bash}
->> 
->> ~~~
->> FAIL    Per base sequence quality       JC1A_R1.fastq.gz             
->> FAIL    Per sequence GC content JC1A_R1.fastq.gz                     
->> FAIL    Sequence Duplication Levels     JC1A_R1.fastq.gz             
->> FAIL    Adapter Content JC1A_R1.fastq.gz                             
->> FAIL    Per base sequence quality       JC1A_R2.fastq.gz             
->> FAIL    Per sequence GC content JC1A_R2.fastq.gz                     
->> FAIL    Sequence Duplication Levels     JC1A_R2.fastq.gz             
->> FAIL    Adapter Content JC1A_R2.fastq.gz                             
->> FAIL    Per base sequence content       JP4D_R1.fastq     
->> FAIL    Adapter Content JP4D_R1.fastq                     
->> FAIL    Per base sequence quality       JP4D_R2.fastq.gz  
->> FAIL    Per base sequence content       JP4D_R2.fastq.gz  
->> FAIL    Adapter Content JP4D_R2.fastq.gz
->> ~~~
->> {: .output}
->> 
-> {: .solution}
+  ## Exercise 4: Quality tests
+  
+  Which samples failed at least one of FastQC's quality tests? What
+  test(s) did those samples failed
+ 
+   ## Solution
+   
+   We can get the list of all failed tests using `grep`. 
+   
+   ~~~ 
+   $ cd ~/dc_workshop/docs
+   $ grep FAIL fastqc_summaries.txt
+   ~~~
+   {: .bash}
+   
+   ~~~
+   FAIL    Per base sequence quality       JC1A_R1.fastq.gz             
+   FAIL    Per sequence GC content JC1A_R1.fastq.gz                     
+   FAIL    Sequence Duplication Levels     JC1A_R1.fastq.gz             
+   FAIL    Adapter Content JC1A_R1.fastq.gz                             
+   FAIL    Per base sequence quality       JC1A_R2.fastq.gz             
+   FAIL    Per sequence GC content JC1A_R2.fastq.gz                     
+   FAIL    Sequence Duplication Levels     JC1A_R2.fastq.gz             
+   FAIL    Adapter Content JC1A_R2.fastq.gz                             
+   FAIL    Per base sequence content       JP4D_R1.fastq     
+   FAIL    Adapter Content JP4D_R1.fastq                     
+   FAIL    Per base sequence quality       JP4D_R2.fastq.gz  
+   FAIL    Per base sequence content       JP4D_R2.fastq.gz  
+   FAIL    Adapter Content JP4D_R2.fastq.gz
+   ~~~
+   {: .output}
+   
+  {: .solution}
 {: .challenge}
 
 > ## Quality of large datasets
