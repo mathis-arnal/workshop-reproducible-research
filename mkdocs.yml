@@ -88,15 +88,15 @@ nav:
         - Lectures: pages/course-information/lectures.md
         - Setup: pages/course-information/pre-course-setup.md
     - Tutorials:
-        - 'Project Organization': pages/project_organisation/project_organisation.md
-        - Sequencing data analyses:
-          - Introduction: pages/sequence_analysis/introduction.md 
-          - File formats: pages/sequence_analysis/file_formats.md
-          - Short Reads Quality Control and Trimming: pages/sequence_analysis/qc_sr.md
-          - Short reads assembly: pages/sequence_analysis/assembly_sr.md
-          - Long reads: pages/sequence_analysis/long_reads.md
-          - Hybrid assembly: pages/sequence_analysis/assembly_hybrid.md
-          - Mapping and variant calling: pages/sequence_analysis/variant_calling.md
+        # - 'Project Organization': pages/project_organisation/project_organisation.md
+        # - Sequencing data analyses:
+        #   - Introduction: pages/sequence_analysis/introduction.md 
+        #   - File formats: pages/sequence_analysis/file_formats.md
+        #   - Short Reads Quality Control and Trimming: pages/sequence_analysis/qc_sr.md
+        #   - Short reads assembly: pages/sequence_analysis/assembly_sr.md
+        #   - Long reads: pages/sequence_analysis/long_reads.md
+        #   - Hybrid assembly: pages/sequence_analysis/assembly_hybrid.md
+        #   - Mapping and variant calling: pages/sequence_analysis/variant_calling.md
         - Metagenomic :
           - Introduction: pages/metagenomic/meta_introduction.md
           - Background: pages/metagenomic/01-background-metadata.md
@@ -113,11 +113,11 @@ nav:
         #   - Working remotly: pages/git/git-7-working-remotely.md
         #   - Conflict: pages/git/git-8-conflicts.md
         #   - Extra material: pages/git/git-9-extra-material.md
-        - Conda:
-          - Introduction: pages/conda/conda-1-introduction.md
-          - The basics: pages/conda/conda-2-the-basics.md
-          - Projects: pages/conda/conda-3-projects.md
-          - Extra material: pages/conda/conda-4-extra-material.md
+        # - Conda:
+        #   - Introduction: pages/conda/conda-1-introduction.md
+        #   - The basics: pages/conda/conda-2-the-basics.md
+        #   - Projects: pages/conda/conda-3-projects.md
+        #   - Extra material: pages/conda/conda-4-extra-material.md
         # - Snakemake:
         #   - Introduction: pages/snakemake/snakemake-1-introduction.md
         #   - The basics: pages/snakemake/snakemake-2-the-basics.md
@@ -130,13 +130,13 @@ nav:
         #   - Shadow rules: pages/snakemake/snakemake-9-shadow-rules.md
         #   - Generalizing workflows: pages/snakemake/snakemake-10-generalizing-workflows.md
         #   - Extra materiel: pages/snakemake/snakemake-11-extra-material.md
-        - Nextflow:
+        # - Nextflow:
         #   - Introduction: pages/nextflow/nextflow-1-introduction.md
         #   - The basics: pages/nextflow/nextflow-2-the-basics.md
         #   - Running Nextflow: pages/nextflow/nextflow-3-executing-workflows.md
         #   - Processes: pages/nextflow/nextflow-4-working-with-processes.md
         #   - Configuration: pages/nextflow/nextflow-5-workflow-configuration.md
-            - The MRSA Workflow: pages/nextflow/nextflow-6-optimising-the-mrsa-workflow.md
+        #   - The MRSA Workflow: pages/nextflow/nextflow-6-optimising-the-mrsa-workflow.md
         #   - Extra materiel: pages/nextflow/nextflow-7-extra-material.md
         # - R Markdown:
         #   - Introduction: pages/rmarkdown/r-markdown-1-introduction.md

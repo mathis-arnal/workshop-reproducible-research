@@ -4,76 +4,57 @@
          <tr>
             <td style="color:white; padding:5px; width:75px"> <font size="3"><b> Time </b> </td>
             <td style="color:white; padding:5px; width:625px"> <font size="3"><b> Topic </b> </td>
-            <td style="color:white; padding:5px; width:100px"> <font size="3"><b> Teacher </b> </td>
         </tr>
     </thead>
     <tr>
         <td style="padding:5px"> <font size="3"> 09:00 </td>
-        <td style="padding:5px"> <font size="3"> Setting up </td>
-        <td style="padding:5px"> <font size="3">  </td>
+        <td style="padding:5px"> <font size="3"> Introduction to Next Generation Sequencing (NGS) </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 10:00 </td>
-        <td style="padding:5px"> <font size="3"> Introduction to Reproducible Research </td>
-        <td style="padding:5px"> <font size="3">  </td>
+        <td style="padding:5px"> <font size="3"> Starting a Metagenomics Project
+             <font size="2"><i><br>
+               - How do you plan a metagenomics experiment? <br>
+               - How does a metagenomics project look like? <br>
+        </td>     
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 10:30 </td>
         <td style="padding:5px"> <font size="3"> Break </td>
-        <td style="padding:5px"> <font size="3">  </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 10:45 </td>
-        <td style="padding:5px"> <font size="3"> Data management and project organization </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 11:15 </td>
-        <td style="padding:5px"> <font size="3"> Break-out rooms and ice breaker session </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 11:30 </td>
-        <td style="padding:5px"> <font size="3"> Distributing and version tracking your code
+        <td style="padding:5px"> <font size="3"> Quick introduction to Galaxy : a powerful bioinformatic tool
              <font size="2"><i><br>
-               - Introduction to version control and Git <br>
-               - Practical tutorial: Git <br>
+               - How to get started in Galaxy ? <br>
+               - What is a fastq file ? <br>
+               - Introduction to the fastqE tool <br>
         </td>
-        <td style="padding:5px"> <font size="3">  </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 12:00 </td>
         <td style="padding:5px"> <font size="3"> Lunch </td>
-        <td style="padding:5px"> <font size="3"> </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 13:00 </td>
-        <td style="padding:5px"> <font size="3"> ... continued: Git tutorial <br></td>
-        <td style="padding:5px"> <font size="3">  </td>
+        <td style="padding:5px"> <font size="3"> Assessing Read Quality, Trimming and Filtering
+             <font size="2"><i><br>
+               - How can I describe the quality of my data? <br>
+               - How can we get rid of sequence data that does not meet our quality standards? <br>
+        </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 14:30 </td>
-        <td style="padding:5px"> <font size="3"> Wrap-up Git tutorial </td>
-        <td style="padding:5px"> <font size="3">  </td>
+        <td style="padding:5px"> <font size="3"> Break </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 14:45 </td>
-        <td style="padding:5px"> <font size="3"> Break </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 15:00 </td>
-        <td style="padding:5px"> <font size="3"> Master your dependencies - environments and reproducibility
+        <td style="padding:5px"> <font size="3"> Taxonomic Profiling and Visualization of Metagenomic Data
              <font size="2"><i><br>
-             - Introduction to the package and environment manager Conda <br>
-             - Practical tutorial: Conda </i>
+             - Which species (or genera, families, …) are present in my sample? <br>
+             - What are the different approaches and tools to get the community profile of my sample? <br>
+             - How can we visualize and compare community profiles? <br> </i>
         </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 16:45 </td>
-        <td style="padding:5px"> <font size="3"> Wrap up: Conda tutorial </td>
-        <td style="padding:5px"> <font size="3">  </td>
     </tr>
 </table>
 
@@ -87,13 +68,13 @@
             <td style="color:white; padding:5px; width:100px"> <font size="3"><b> Teacher </b> </td>
         </tr>
     </thead>
-
     <tr>
         <td style="padding:5px"> <font size="3"> 09:00 </td>
-        <td style="padding:5px"> <font size="3"> Organize your analysis using workflow managers
+        <td style="padding:5px"> <font size="3"> Calculating α and β diversity from microbiome taxonomic data
              <font size="2"> <i><br>
-             - Introduction to Snakemake <br>
-             - Practical tutorial: Snakemake
+             - How many different taxons are present in my sample? How do I additionally take their relative abundance into account? <br>
+             - How similar or how dissimilar are my samples in term of taxonomic diversity? <br>
+             - What are the different metrics used to calculate the taxonomic diversity of my samples?
              </i>
         </td>
         <td style="padding:5px"> <font size="3">  </td>
@@ -105,7 +86,14 @@
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 10:45 </td>
-        <td style="padding:5px"> <font size="3"> ... continued: Snakemake tutorial </td>
+        <td style="padding:5px"> <font size="3"> Metagenome Assembly
+             <font size="2"> <i><br>
+             - Why should genomic data be assembled? <br>
+             - What is the difference between reads and contigs? <br>
+             - How can we assess the quality of an assembly? <br>
+             - How can we assemble a metagenome?
+             </i>
+        </td>             
         <td style="padding:5px"> <font size="3">  </td>
     </tr>
     <tr>
@@ -115,37 +103,18 @@
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 13:00 </td>
-        <td style="padding:5px"> <font size="3"> ... continued: Snakemake tutorial </td>
+        <td style="padding:5px"> <font size="3"> Metagenome Binning
+ <font size="2"> <i><br>
+             - How can we obtain the original genomes from a metagenome? <br>
+             - How can we assess the quality of a binning?
+             </i>
+        </td>           
         <td style="padding:5px"> <font size="3">  </td>
     </tr>
     <tr>
         <td style="padding:5px"> <font size="3"> 14:00 </td>
-        <td style="padding:5px"> <font size="3"> Wrap-up Snakemake tutorial </td>
+        <td style="padding:5px"> <font size="3"> Genome Annotation </td>
         <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 14:15 </td>
-        <td style="padding:5px"> <font size="3"> Organize your analysis using workflow managers
-             <font size="2"><i><br>
-             - Introduction to Nextflow <br>
-             - Practical tutorial: Nextflow </i>
-        </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 15:00 </td>
-        <td style="padding:5px"> <font size="3"> Break </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 15:15 </td>
-        <td style="padding:5px"> <font size="3"> ... continued: Nextflow tutorial </td>
-        <td style="padding:5px"> <font size="3">  </td>
-    </tr>
-    <tr>
-        <td style="padding:5px"> <font size="3"> 17:30  </td>
-        <td style="padding:5px"> <font size="3"> Wrap-up Nextflow tutorial </td>
-        <td style="padding:5px"> <font size="3"> JS </td>
     </tr>
 </table>
 
