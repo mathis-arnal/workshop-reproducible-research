@@ -77,8 +77,8 @@ directly tell us a lot about the metabolic functions found in each genome,
 although educated guesses can be made by knowing which genes are 
 commonly found in every identified species. 
 
-<a href="{../fig/03-01-01.png">
-  <img src="{../fig/03-01-01.png" alt="Flow chart that shows the steps of a metagenomics project: Experimental design, Sampling, DNA extraction, Sequencing, Read quality, Assembly, Binning, Bin quality and Data analysis " />
+<a href="../fig/03-01-01.png">
+  <img src="../fig/03-01-01.png" alt="Flow chart that shows the steps of a metagenomics project: Experimental design, Sampling, DNA extraction, Sequencing, Read quality, Assembly, Binning, Bin quality and Data analysis " />
 </a>
 
 ## On Metadata
@@ -90,17 +90,19 @@ the differences that we observe when comparing metagenomes can be
 correlated to the metadata, which is why we must devote a whole section 
 of our experimental design to the metadata we expect to collect and record carefully. 
 
-!!! note "Discussion #1: Choosing amplicon or shotgun sequencing?" 
+!!! note "Discussion #1: Choosing amplicon or shotgun sequencing?"
 
-      Suppose you want to find the source of a nasty gut infection in people. Which type of sequencing methodology would you choose?  
-      Which type of metadata would be helpful to record?
- 
-      ??? success "Click to show the answer"
-            For a first exploration, 16S is a better idea since you could detect known pathogens by knowing the taxons in the community.
-            Nevertheless, if the disease is the consequence of a viral infection, the pathogen can only be discovered with shotgun metagenomics (that was the case of SARS-CoV 2). 
-            Also, metabarcoding does not provide insights into the genetic basis of the pathogenic phenotypes.
-            Metadata will depend on the type of experiment. For this case, some helpful metadata could be sampling methodology, 
-            date, place (country, state, region, city, etc.), patient's sex and age, the anatomical origin of the sample, symptoms, medical history, diet, lifestyle, and environment. 
+    Suppose you want to find the source of a nasty gut infection in people. Which type of sequencing methodology would you choose?  
+    Which type of metadata would be helpful to record?
+
+    ??? success "Click to show the answer"
+
+        For a first exploration, 16S is a better idea since you could detect known pathogens by knowing the taxons in the community.  
+        Nevertheless, if the disease is the consequence of a viral infection, the pathogen can only be discovered with shotgun metagenomics (that was the case of SARS-CoV 2).  
+        Also, metabarcoding does not provide insights into the genetic basis of the pathogenic phenotypes.  
+        Metadata will depend on the type of experiment. For this case, some helpful metadata could be sampling methodology,  
+        date, place (country, state, region, city, etc.), patient's sex and age, the anatomical origin of the sample, symptoms, medical history, diet, lifestyle, and environment.
+
  
 
 ## Cuatro Ciénegas  
@@ -177,7 +179,7 @@ changed when the bacterial community underwent the treatment.
 
 Throughout the lesson, we will use the first four 
 characters of the `File names (alias)` to identify the data files 
-corresponding to a sample. We are going to use the first two sapmples for most of the lesson and the third one for one exercise at the end.
+corresponding to a sample. We are going to use the first two samples (JC1A and JP4D) for most of the lesson and the third one (JP41) for one exercise at the end.
 
 |SRA Accession | File name (alias)    | Sample name in the lesson | Treatment        |
 |--------------|----------------------|---------------------------|------------------| 
@@ -188,7 +190,17 @@ corresponding to a sample. We are going to use the first two sapmples for most o
 The results of this study, raw sequences, and metadata have 
 been submitted to the NCBI Sequence Read Archive (SRA) and stored in the BioProject [PRJEB22811](https://www.ncbi.nlm.nih.gov/sra/?term=PRJEB22811). 
 
- ## Other metagenomic databases
+SRA database is interconnected to the European Nucleotide Archive, which mean that you can access to the data on the ENA Webiste aswell:
+ Here is the link to JC1A: https://www.ebi.ac.uk/ena/browser/view/SAMEA104324806?show=reads .
+ Here is the link to JP4D: https://www.ebi.ac.uk/ena/browser/view/ERS1949801?dataType=SAMPLE&show=reads . 
+
+ You can install the reads of JC1A and JP4D using these links: 
+https://zenodo.org/record/7871630/files/JC1A_R1.fastqsanger.gz
+https://zenodo.org/record/7871630/files/JC1A_R2.fastqsanger.gz
+https://zenodo.org/record/7871630/files/JP4D_R1.fastqsanger.gz
+https://zenodo.org/record/7871630/files/JP4D_R2.fastqsanger.gz 
+
+## Other metagenomic databases
  The NCBI SRA is not the only repository for metagenomic information. There are other public metagenomic databases such as [MG-RAST](https://www.mg-rast.org/index.html?stay=1), [MGnify](https://www.ebi.ac.uk/metagenomics/), [Marine Metagenomics Portal](https://mmp.sfb.uit.no/), [Terrestrial Metagenome DB](https://webapp.ufz.de/tmdb/) and the [GM Repo](https://gmrepo.humangut.info/home).   
 {: .callout}
 

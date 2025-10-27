@@ -10,6 +10,9 @@ https://training.galaxyproject.org/training-material/topics/introduction/tutoria
 A funny way to look at the quality of your data is to switch these ASCII characters to emoji.
 We can look at this using the tool FASTQE ( FastQ + Emoji) (https://fastqe.com/)
 
+Repo github of this tutorial : 
+https://github.com/galaxyproject/training-material/tree/main/topics/introduction/tutorials/galaxy-intro-short
+
 # Quality Control Tutorial :
 Let's try to do this, with the same dataset. 
 Take the time to look at all the plots that are rendered when doing fastQC. ()
