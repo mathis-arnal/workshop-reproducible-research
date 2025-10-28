@@ -125,84 +125,37 @@ In this example, we have told Trimmomatic:
 | `ILLUMINACLIP:SRR_adapters.fa`| to clip the Illumina adapters from the input file using the adapter sequences listed in `SRR_adapters.fa` |
 |`SLIDINGWINDOW:4:20` | to use a sliding window of size 4 that will remove bases if their Phred score is below 20 |
 
+ 
+ 
+## Running Trimmomatic on Galaxy
+
+Now, we will run Trimmomatic on our data.
+Instead of using a command, we are going to use Galaxy again !
 
 
-> ## Multi-line for long commands 
-> Some of the commands we ran in this lesson are long! To separate code chunks onto separate lines
->  When typing into your terminal one command with long input or many modifying parameters, you can
->   use the `\` character to make your code more readable. For example, let us use multi lines 
->   with the echo command. With `\` it is possible to use several lines to print "hello world" 
->   on your terminal.
-> ~~~
-> $ echo he\
-> $ llo\
-> $ world
-> ~~~
-> {: .bash}
-> ~~~
-> $ hello world
-> ~~~
-> {: .output}
-> Note: Some terminals only wait a few seconds for you to keep typing. In that case, you may write 
-> down the full command in a text file and then copy it to your terminal.
-{: .callout}
+We are going to run Trimmomatic on one of our paired-end samples.
+First, we will do it with JP4D.
+
+### Create a new history 
+First, let's create a new history, and name it "Trimming and Filtering"
+(Ajouter une image de creation d'history).
+Then using the History Multiview, we can move the fastq from the previous analysis (FastQC). (JP4D collection)
+Then, we can type "Trimmomatic" inside the "Tools" .  
 
 
-
-## Running Trimmomatic
-
-Now, we will run Trimmomatic on our data. Navigate to your 
-`untrimmed_fastq` data directory and verify that you are 
-located in the `untrimmed_fastq/` directory:
-
-~~~
-$ cd ~/dc_workshop/data/untrimmed_fastq
-$ pwd
-~~~
-{: .bash}
-
-~~~
-$ /home/dcuser/dc_workshop/data/untrimmed_fastq
-~~~
-{: .output}
-
-You should have only four files in this directory. Those files correspond
-to the files of forward and reverse reads from samples JC1A and JP4D.
-~~~
-$ ls
-~~~
-{: .bash}
-
-~~~
-$ JC1A_R1.fastq.gz  JC1A_R2.fastq.gz  JP4D_R1.fastq  JP4D_R2.fastq.gz  TruSeq3-PE.fa   
-~~~
-{: .output}
-
-We are going to run Trimmomatic on one of our paired-end samples. 
 While using FastQC, we saw that Universal adapters were present 
 in our samples. The adapter sequences came with the installation of 
-Trimmomatic and it is located in our current directory in the file `TruSeq3-PE.fa`.
+Trimmomatic and it is located in our current directory in the database  `TruSeq3`.
 
 We will also use a sliding window of size 4 that will remove bases if their
 Phred score is below 20 (like in our example above). We will also
 discard any reads that do not have at least 25 bases remaining after
-this trimming step. This command will take a few minutes to run.
+this trimming step.
+(Put a picture of the parameters to use inside Trimmomatic)
 
-Before, we unzipped one of our files to work with it. Let us compress 
-the file corresponding to the sample `JP4D` again before we run Trimmomatic.
-~~~
-gzip JP4D_R1.fastq
-~~~
-{: .bash}
- 
-~~~
-$ trimmomatic PE JP4D_R1.fastq.gz JP4D_R2.fastq.gz \
-JP4D_R1.trim.fastq.gz  JP4D_R1un.trim.fastq.gz \
-JP4D_R2.trim.fastq.gz  JP4D_R2un.trim.fastq.gz \
-SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 
-~~~
-{: .bash}
-
+Once you have selected all the good parameters, you can click on "Run".
+This command will take a few minutes to run.
+Open the output " Trimmomatic on collection X (log file)
 
 ~~~
 TrimmomaticPE: Started with arguments:
@@ -231,152 +184,34 @@ TrimmomaticPE: Completed successfully
 {: .challenge}
 
 You may have noticed that Trimmomatic automatically detected the
-quality encoding of our sample. It is always a good idea to
+quality encoding of our sample (phred33). It is always a good idea to
 double-check this or manually enter the quality encoding.
 
-We can confirm that we have our output files:
-
-~~~
-$ ls JP4D*
-~~~
-{: .bash}
-
-~~~
-JP4D_R1.fastq.gz       JP4D_R1un.trim.fastq.gz	JP4D_R2.trim.fastq.gz
-JP4D_R1.trim.fastq.gz  JP4D_R2.fastq.gz		JP4D_R2un.trim.fastq.gz
-~~~
-{: .output}
-
-The output files are also FASTQ files. It should be smaller than our
-input file because we have removed reads. We can confirm this with this
-command:
-
-~~~
-$ ls JP4D* -l -h
-~~~
-{: .bash}
-
-~~~
--rw-r--r-- 1 dcuser dcuser 179M Nov 26 12:44 JP4D_R1.fastq.gz
--rw-rw-r-- 1 dcuser dcuser 107M Mar 11 23:05 JP4D_R1.trim.fastq.gz
--rw-rw-r-- 1 dcuser dcuser  43M Mar 11 23:05 JP4D_R1un.trim.fastq.gz
--rw-r--r-- 1 dcuser dcuser 203M Nov 26 12:51 JP4D_R2.fastq.gz
--rw-rw-r-- 1 dcuser dcuser 109M Mar 11 23:05 JP4D_R2.trim.fastq.gz
--rw-rw-r-- 1 dcuser dcuser 1.3M Mar 11 23:05 JP4D_R2un.trim.fastq.gz
-~~~
-{: .output}
+## Exercise 2 
+The output files are also FASTQ files. 
+!!! question "Should the output fastqfile file be smaller or bigger than the input file"
+        ??? success "It should be smaller than our input file because we have removed reads."
 
 
 We have just successfully run Trimmomatic on one of our FASTQ files!
-However, there is some bad news. Trimmomatic can only operate on
-one sample at a time, and we have more than one sample. The good news
-is that we can use a `for` loop to iterate through our sample files
-quickly! 
+Now we need to do it on our other sample : JC1A.
 
-~~~
-$ for infile in *_R1.fastq.gz
-do
-base=$(basename ${infile} _R1.fastq.gz)
-trimmomatic PE ${infile} ${base}_R2.fastq.gz \
-${base}_R1.trim.fastq.gz ${base}_R1un.trim.fastq.gz \
-${base}_R2.trim.fastq.gz ${base}_R2un.trim.fastq.gz \
-SLIDINGWINDOW:4:20 MINLEN:35 ILLUMINACLIP:TruSeq3-PE.fa:2:40:15
-done
-~~~
-{: .bash}
-
-
-Go ahead and run the `for` loop. It should take a few minutes for
-Trimmomatic to run for each of our four input files. Once it is done, 
-take a look at your directory contents. You will notice that even though we ran Trimmomatic on file `JP4D` before running the for loop, there is only one set of files for it. Because we matched the ending `_R1.fastq.gz`, we re-ran Trimmomatic on this file, overwriting our first results. That is ok, but it is good to be aware that it happened.
-
-~~~
-$ ls
-~~~
-{: .bash}
-
-~~~
-JC1A_R1.fastq.gz                     JP4D_R1.fastq.gz                                    
-JC1A_R1.trim.fastq.gz                JP4D_R1.trim.fastq.gz                                
-JC1A_R1un.trim.fastq.gz              JP4D_R1un.trim.fastq.gz                                
-JC1A_R2.fastq.gz                     JP4D_R2.fastq.gz                                 
-JC1A_R2.trim.fastq.gz                JP4D_R2.trim.fastq.gz                                 
-JC1A_R2un.trim.fastq.gz              JP4D_R2un.trim.fastq.gz                                 
-TruSeq3-PE.fa   
-~~~
-{: .output}
 
 We have completed the trimming and filtering steps of our quality
-control process! Before we move on, let us move our trimmed FASTQ files
-to a new subdirectory within our `data/` directory.
+control process! 
 
-~~~
-$ cd ~/dc_workshop/data/untrimmed_fastq
-$ mkdir ../trimmed_fastq
-$ mv *.trim* ../trimmed_fastq
-$ cd ../trimmed_fastq
-$ ls
-~~~
-{: .bash}
-
-~~~
-JC1A_R1.trim.fastq.gz    JP4D_R1.trim.fastq.gz                
-JC1A_R1un.trim.fastq.gz  JP4D_R1un.trim.fastq.gz              
-JC1A_R2.trim.fastq.gz    JP4D_R2.trim.fastq.gz                
-JC1A_R2un.trim.fastq.gz  JP4D_R2un.trim.fastq.gz   
-~~~
-{: .output}
-
-> ## Bonus Exercise (Advanced): Quality test after trimming
+> ## Bonus Exercise: Quality test after trimming
 >
 > Now that our samples have gone through quality control, they should perform
 > better on the quality tests run by FastQC. 
-> 
-> Sort the following chunks of code to re-run
-> FastQC on your trimmed FASTQ files and visualize the HTML files
-> to see whether your per base sequence quality is higher after
-> trimming. 
-> ~~~
-> $ scp dcuser@ec2-34-203-203-131.compute-1.amazonaws.com:~/dc_workshop/data/trimmed_fastq/*.html ~/Desktop/fastqc_html/trimmed
-> ~~~
-> {: .bash}
-> 
-> ~~~
-> $ fastqc ~/dc_workshop/data/trimmed_fastq/*.fastq*
-> ~~~
-> {: .bash}
-> 
-> ~~~
-> $ mkdir ~/Desktop/fastqc_html/trimmed
-> ~~~
-> {: .bash}
-> 
->> ## Solution
->>
->> In your AWS terminal window, do the following:
->>
->> ~~~
->> $ fastqc ~/dc_workshop/data/trimmed_fastq/*.fastq*
->> ~~~
->> {: .bash}
->>
->> In a terminal standing on your local computer, do:
->>
->> ~~~
->> $ mkdir ~/Desktop/fastqc_html/trimmed
->> $ scp dcuser@ec2-34-203-203-131.compute-1.amazonaws.com:~/dc_workshop/data/trimmed_fastq/*.html ~/Desktop/fastqc_html/trimmed
->> ~~~
->> {: .bash}
->> 
->> Then take a look at the html files in your browser.
->> 
->> Remember to replace everything between the `@` and `:` in your scp
->> command with your AWS instance number.
->>
->> After trimming and filtering, our overall quality is much higher, 
->> we have a distribution of sequence lengths, and more samples pass 
->> adapter content. However, quality trimming is not perfect, and some
->> programs are better at removing some sequences than others. Trimmomatic 
->> did pretty well, though, and its performance is good enough for our workflow.
-> {: .solution}
-{: .challenge}
+
+ Rerun the FastQC Analysis to check if our sequences have been succesfully filtered and trimmed.
+ 
+  After trimming and filtering, our overall quality is much higher, 
+  we have a distribution of sequence lengths, and more samples pass 
+  adapter content. However, quality trimming is not perfect, and some
+  programs are better at removing some sequences than others. Trimmomatic 
+  did pretty well, though, and its performance is good enough for our workflow.
+
+
+Now that the Quality Control Process step is done, we can move on to the Taxoxomic assignement of our samples.   

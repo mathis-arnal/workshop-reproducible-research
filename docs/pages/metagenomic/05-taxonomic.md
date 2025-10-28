@@ -14,6 +14,16 @@ keypoints:
 - "Taxonomic assignment can be done using Kraken."
 - "Krona and Pavian are web-based tools to visualize the assigned taxa."
 ---
+# Taxonomic Profiling
+
+The investigation of microorganisms present at a specific site and their relative abundance is also called “microbial community profiling”. The main objective is to identify the microorganisms that are present within the given sample. This can be achieved for all known microbes, where the DNA sequence specific for a certain species is known.
+
+For that we try to identify the taxon to which each individual read belongs.
+
+## What is Taxonomy ?
+Taxonomy is the method used to naming, defining (circumscribing) and classifying groups of biological organisms based on shared characteristics such as morphological characteristics, phylogenetic characteristics, DNA data, etc. It is founded on the concept that the similarities descend from a common evolutionary ancestor.
+
+Defined groups of organisms are known as taxa. Taxa are given a taxonomic rank and are aggregated into super groups of higher rank to create a taxonomic hierarchy. The taxonomic hierarchy includes eight levels: Domain, Kingdom, Phylum, Class, Order, Family, Genus and Species.
 ## What is a taxonomic assignment?
 
 A taxonomic assignment is a process of assigning an Operational Taxonomic
@@ -60,15 +70,28 @@ the organisms in the sample.
 >
 > What do you think is harder to assign, a species (like _E. coli_) or a phylum (like Proteobacteria)?
 {: .discussion}
-  
-## Using Kraken 2
+
+## Data used 
+we will use the 2 datasets that we previously filtered and trimmed:
+
+JP4D: a microbiome sample collected from the Lagunita Fertilized Pond
+JC1A: a control samples from a control mesocosm.
+
+## Using k-mer based approach, with the tool Kraken 2
 
 [Kraken 2](https://ccb.jhu.edu/software/kraken2/) is the newest version of Kraken, 
 a taxonomic classification system using exact k-mer matches to achieve 
 high accuracy and fast classification speeds. 
 
 Kraken 2 is available on Galaxy.
-We will follow this tutorial, that uses the same dataset: 
+We will follow this tutorial : 
 https://training.galaxyproject.org/training-material/topics/microbiome/tutorials/taxonomic-profiling/tutorial.html
+
+## Compute the species abundance, using Bracken
+EXPLAIN BRACKEN, how it works, the theory behind it 
+
+## Bonus: Using Gene based approach, with the tool MetaPhlAn 
+
+
 
   
